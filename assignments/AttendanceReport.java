@@ -57,7 +57,7 @@ public class AttendanceReport {
         System.out.println("Highest attendance: " + max);
         System.out.println("Highest attendance is on day: " + maxDay);
 
-        sc.close();
+        
     }
 }
 
