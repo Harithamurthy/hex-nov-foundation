@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class AttendanceReport {
@@ -8,26 +7,21 @@ public class AttendanceReport {
 
         int[] attendance = new int[10];
         int[] runningTotal = new int[11];
-
         
-        System.out.println("Enter attendance for 10 days:");
+        System.out.println("Enter attendance for 10 days");
 
         for (int i = 0; i < 10; i++) {
             System.out.print("Day " + (i + 1) + ": ");
             attendance[i] = sc.nextInt();
         }
-
-        
         runningTotal[0] = 0;
 
         for (int i = 1; i <= 10; i++) {
             runningTotal[i] = runningTotal[i - 1] + attendance[i - 1];
         }
-
-      
         System.out.print("Enter starting day: ");
         int start = sc.nextInt();
-
+        
         System.out.print("Enter ending day: ");
         int end = sc.nextInt();
 
@@ -35,14 +29,12 @@ public class AttendanceReport {
 
             int total = runningTotal[end] - runningTotal[start - 1];
 
-            System.out.println("Total attendance from day "
+            System.out.println("Total attendance "
                     + start + " to day " + end + " = " + total);
 
         } else {
-            System.out.println("Invalid range!");
-        }
-
-        
+            System.out.println("Invalid");
+        }        
         int max = attendance[0];
         int maxDay = 1;
 
@@ -53,11 +45,7 @@ public class AttendanceReport {
                 maxDay = i + 1;
             }
         }
-
         System.out.println("Highest attendance: " + max);
-        System.out.println("Highest attendance is on day: " + maxDay);
-
-        
+        System.out.println("day: " + maxDay);
     }
 }
-
